@@ -6,7 +6,7 @@
 /*   By: ma1iik <ma1iik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 14:43:46 by ma1iik            #+#    #+#             */
-/*   Updated: 2023/09/16 18:09:00 by ma1iik           ###   ########.fr       */
+/*   Updated: 2023/09/27 15:07:07 by ma1iik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	server::run(void) {
 					else {
 						BUFFER[byte_read] = 0;
 						std::cout << BUFFER << std::endl;
-			
+						
 					}
 					break;
 				}

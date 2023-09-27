@@ -7,6 +7,7 @@
 #include <poll.h>
 #include <arpa/inet.h>
 #include <string.h>
+#include "Client.hpp"
 
 #define MAX_CLIENT 20
 
@@ -28,5 +29,7 @@ class server
 		std::string _password;
 		struct sockaddr_in _serv_addr;
 		struct pollfd	_thepoll[MAX_CLIENT + 1];
+
+
 };
 
