@@ -8,6 +8,8 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include "Client.hpp"
+#include "Channel.hpp"
+#include <vector>
 
 #define MAX_CLIENT 20
 

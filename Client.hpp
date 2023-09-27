@@ -1,15 +1,15 @@
 #pragma once
 
-#include <string.h>
+#include "serv.hpp"
 
 class Client {
 	private:
-		std::string		username;
-		std::string		nickname;
-		std::string		hostname;
-		std::string		realname;
-		int				fd;
-		int				verified;
+		std::string		_username;
+		std::string		_nickname;
+		std::string		_hostname;
+		std::string		_realname;
+		int				_fd;
+		int				_verified;
 
 	public:
 		Client(char *port, char *password);
