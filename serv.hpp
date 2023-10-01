@@ -26,11 +26,12 @@ class server
 		server &operator=(server &cpy);
 		
 	private:
-		int _sockfd;
-		int _port;
-		std::string _password;
-		struct sockaddr_in _serv_addr;
-		struct pollfd	_thepoll[MAX_CLIENT + 1];
+		int						_sockfd;
+		int						_port;
+		std::string				_password;
+		struct sockaddr_in		_serv_addr;
+		struct pollfd			_thepoll[MAX_CLIENT + 1];
+		std::vector<Client>		_clients_list;
 
 
 };
