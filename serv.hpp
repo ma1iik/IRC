@@ -20,7 +20,8 @@ class server
 	public:
 		server(char *port, char *password);
 		~server();
-		void run();
+		void 					run();
+		void					pars(char *buffer, int	num);
 
 		server(server &cpy);
 		server &operator=(server &cpy);
@@ -32,6 +33,7 @@ class server
 		struct sockaddr_in		_serv_addr;
 		struct pollfd			_thepoll[MAX_CLIENT + 1];
 		std::vector<Client>		_clients_list;
+		std::vector<Channel>	_channel_list;
 
 
 };

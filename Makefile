@@ -1,7 +1,5 @@
 NAME = IRC
 
-HEADER = serv.hpp
-
 CC = c++
 
 CCFLAGS = -Wall -Wextra -Werror -std=c++98

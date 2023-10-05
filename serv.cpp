@@ -6,7 +6,7 @@
 /*   By: ma1iik <ma1iik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 14:43:46 by ma1iik            #+#    #+#             */
-/*   Updated: 2023/10/01 15:30:36 by ma1iik           ###   ########.fr       */
+/*   Updated: 2023/10/05 20:07:00 by ma1iik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	server::run(void) {
 	char	BUFFER[4098];
 	this->_sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	int newClient;
-	this->_clients_list.reserve(MAX_CLIENT);
 	if (this->_sockfd < 0) {
 		// throw an exception (u have to code one, retard)
 	}
@@ -69,7 +68,8 @@ void	server::run(void) {
 				if (this->_thepoll[i].fd == 0) {
 					this->_thepoll[i].fd = newClient;
 					this->_thepoll[i].events = POLLIN;
-					this->_clients_list[i-1]._fd = newClient;
+					Client	adduser(newClient, i);
+					this->_clients_list.push_back(adduser);
 					break;
 				}
 			}
@@ -87,7 +87,7 @@ void	server::run(void) {
 					else {
 						BUFFER[byte_read] = 0;
 						std::cout << BUFFER << std::endl;
-						
+						this->pars(BUFFER, i);
 					}
 					break;
 				}
@@ -95,3 +95,8 @@ void	server::run(void) {
 		}
 	}
 }
+
+void	server::pars(char *buffer, int num) {
+	
+}
+

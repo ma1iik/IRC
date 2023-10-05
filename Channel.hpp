@@ -1,6 +1,7 @@
 #pragma once
 
 #include "serv.hpp"
+#include <vector>
 
 class Channel {
 	private:
@@ -11,7 +12,7 @@ class Channel {
 		std::vector<Client>		_Users;
 
 	public:
-		Channel(char *port, char *password);
+		Channel(int	socketfd, int num);
 		~Channel();
 
 		Channel(Channel &cpy);
